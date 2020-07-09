@@ -1,0 +1,28 @@
+ALGORITHM algorithm_name
+VAR
+    str:string;
+    sum_voy,sum_mot,sum_carac: INTEGER:=0;
+    i,j : INTEGER:=0;
+
+
+BEGIN
+    REPEAT
+        read(str[i]);
+        i:=i+1;
+    UNTIL (str[i]='.');
+    FOR j FROM 0 TO str.length-1 STEP step1  DO
+     sum_carac:=sum_carac+1;
+IF (str[i]=' ') THEN
+    sum_mot:=sum_mot+1;
+END_IF
+
+IF ((str[i]='a')or(str[i]='e')or(str[i]='y')or(str[i]='u')or(str[i]='o')) THEN
+    sum_voy:=sum_voy+1;
+END_IF
+       
+    END_FOR
+    write(sum_voy);
+    write(sum_carac);
+    write(sum_mot);
+
+END
